@@ -15,7 +15,7 @@ export default async function Login(req, res) {
         
         res.setHeader('Access-Control-Allow-Origin', 'https://rafabezerra.com.br'); // ou especifique o domínio do cliente permitido
         res.setHeader('Access-Control-Allow-Methods', 'POST'); // Métodos HTTP permitidos (nesse caso, apenas POST)
-        res.send(person)
+        res.send(JSON.stringify(person))
     } catch(e) {
         console.log(e)
     }
