@@ -32,7 +32,7 @@ export default function Entrar() {
     async function formSubmited(e) {
         e.preventDefault()
 
-        await axios.post('/api/user/login', form).then(res => {
+        await axios.post('api/user/login', form).then(res => {
             if (res.data.error === true) return setError(true)
 
             session.setUser(res.data)
