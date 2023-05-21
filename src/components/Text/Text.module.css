@@ -1,0 +1,12 @@
+h2.text {
+    margin: 24px 0;
+}
+p.mainText {
+    font-weight: 400!important;
+}
+p.text {
+    font-weight: 300;
+}
+.top {
+    margin-bottom: 16px;
+}
