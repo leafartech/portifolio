@@ -1,9 +1,8 @@
 import clientPromise from '../../../lib/mongodb'
 
 export default async function Login(req, res) {
+    console.log('aqui')
     try {
-
-        
         const client = await clientPromise;
         const db = client.db("BASEDEDADOS");
         
