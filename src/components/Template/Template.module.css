@@ -1,0 +1,22 @@
+.templateBig {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e2e8f0;
+}
+.templateBig .template {
+    position: relative;
+    min-height: 720px;
+    width: 660px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    border-radius: 12px;
+    border: 4px solid #e2e8f0;
+    padding: 24px 24px;
+    display: grid;
+    grid-template-rows: 80px 1fr 60px;
+    grid-template-columns: 1fr;
+}
