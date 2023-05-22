@@ -3,6 +3,7 @@ import NextCors from 'nextjs-cors'
 
 
 export default async function Login(req, res) {
+    console.log('aqui')
     try {
         await NextCors(req, res, {
             // Options
