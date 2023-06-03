@@ -1,0 +1,25 @@
+.article {
+    padding: 24px 12px 0 12px;
+}
+.article .content {
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--neutral2)
+}
+.article .not-first {
+    margin-top: 48px;
+}
+.article .text {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.article h1 {
+    font-size: var(--big-size);
+    color: var(--accent1);
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+.article p {
+    font-size: var(--medium-size);
+    color: var(--accent4);
+}

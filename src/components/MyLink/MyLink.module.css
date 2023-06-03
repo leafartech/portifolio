@@ -1,0 +1,22 @@
+.navlink {
+    text-decoration: none;
+    color: var(--accent4);
+    font-size: var(--medium-size);
+}
+.active {
+    color: var(--main);
+}
+.navlink:hover {
+    color: var(--accent1);
+}
+.btn {
+    border-radius: 4px;
+    padding: 12px 8px;
+    color: var(--main);
+    font-size: var(--medium-x-size);
+    border: 1px solid var(--main);
+}
+.btn:hover {
+    color: #fff;
+    background: var(--main);
+}
