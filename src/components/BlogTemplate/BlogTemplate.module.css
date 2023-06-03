@@ -1,6 +1,0 @@
-.blog-template {
-    width: 100%;
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: 280px 1fr 200px;
-}
