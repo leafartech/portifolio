@@ -1,0 +1,33 @@
+.project-preview {
+    position: relative;
+    margin-top: 120px;
+    max-width: 1000px;
+}
+.project-preview ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.project-preview li {
+    margin-bottom: 24px;
+}
+.project-preview ul .bottom {
+    transform: translateY(-32px)
+}
+.project-preview  > a {
+    position: absolute;
+    right: 12px;
+    top: -52px;
+    color: var(--main);
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.project-preview > a svg {
+    height: 16px;
+    width: 16px;
+    fill: var(--main);
+}
