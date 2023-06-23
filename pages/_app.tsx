@@ -16,6 +16,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           })(window,document,'script','dataLayer','GTM-5GSSTLJ');</script>
           <!-- End Google Tag Manager -->
         `}} />
+        <script dangerouslySetInnerHTML={{__html: `
+          {/* <!-- Google Tag Manager (noscript) --> */}
+          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GSSTLJ"
+          height="0" width="0"></iframe></noscript>
+          {/* // <!-- End Google Tag Manager (noscript) --> */}
+        `}} />
     </Head>
     <Component {...pageProps} />
   </>
