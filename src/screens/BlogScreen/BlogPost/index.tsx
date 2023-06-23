@@ -98,14 +98,14 @@ function BlogPostScreen() {
                             <input className="bg-transparent text-4xl text-gray-900 outline-1 outline-gray-100 p-4 w-full" type="text" name="title" value={mainTitle} onChange={e => setMainTitle(e.target.value)}/>
                             <input className="bg-transparent text-lg text-gray-600 outline-1 outline-gray-100 py-2 px-4 w-full" type="text" name="main-description" value={mainDescription} onChange={e => setMainDescription(e.target.value)} />
                         </div>
-                        <div className="relative" key={0}>
-                        <BlogContent inptChange={(e: ChangeEvent, index: string) => inptChange(e, index)} quantity={quantity} topicContent={topicContent} topicTitles={topicTitles}/>
+                        {/* <div className="relative" key={0}>
+                        <BlogContent inptChange={(e, index) => inptChange(e, 0)} quantity={quantity} topicContent={topicContent} topicTitles={topicTitles}/>
                             <span className="absolute right-0 bottom-10 flex items-center gap-1 underline text-blue-600 cursor-pointer" onClick={newTopic}>
                                 Adicionar tópico
                                 <svg className="h-4 w-4 fill-blue-600" id="Layer_1" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m12 0a12 12 0 1 0 12 12 12.013 12.013 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10.011 10.011 0 0 1 -10 10zm5-10a1 1 0 0 1 -1 1h-3v3a1 1 0 0 1 -2 0v-3h-3a1 1 0 0 1 0-2h3v-3a1 1 0 0 1 2 0v3h3a1 1 0 0 1 1 1z"/></svg>
                             </span>
                             <button className="bg-blue-600 text-center text-gray-100 font-semibold px-3 py-2 rounded mt-6" type='submit'>Finalizar Post</button>
-                        </div>
+                        </div> */}
                     </form>
                 </div>  
             </div>
