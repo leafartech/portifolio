@@ -1,0 +1,17 @@
+.blog-topic textarea,
+.blog-topic input {
+    width: 100%;
+    outline: none;
+    border: none;
+    /* resize: none; */
+}
+.blog-topic input.title {
+    font-size: var(--big-size);
+    color: var(--accent1);
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+.blog-topic input.paragraph {
+    font-size: var(--medium-size);
+    color: var(--accent4);
+}
