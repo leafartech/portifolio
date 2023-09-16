@@ -123,7 +123,7 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <section id="projetos" className="bg-gray-100 py-12 px-2 sm:px-0">
+        <section id="projetos" className="sm:bg-gray-100 py-12 px-2 sm:px-0">
           <div className="flex flex-col items-center mb-6 sm:mb-12">
             <h2 className="text-3xl font-semibold">Projetos realizados</h2>
             <p>Sistemas Web e Páginas de venda</p>
