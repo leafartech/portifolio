@@ -1,113 +1,150 @@
-import Image from 'next/image'
+'use client'
+
+import Card from "@/components/Cards";
+import Masonry from "@/components/Masonry";
+import Navbar from "@/components/Navbar";
+import Section from "@/components/Section";
+import { ArrowSmallLeftIcon, ArrowSmallRightIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 export default function Home() {
+  if (typeof window !== 'undefined') {
+    const menuItems = document.querySelectorAll('#link_item');
+
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+
+      // Verifique qual seção está visível
+      // Você pode usar o método getBoundingClientRect() para isso
+
+      // Adicione/remova a classe para destacar o item do menu correspondente
+      
+      menuItems.forEach((menuItem) => {
+        if (menuItem !== null && menuItem) {
+          const sectionId = menuItem.getAttribute('href')!.substring(1);
+          const section: HTMLElement | null = document.querySelector(`#${sectionId}`);
+
+          const sectionTop = section!.offsetTop;
+          const sectionHeight = section!.offsetHeight;
+
+          if (scrollPosition + 100 >= sectionTop && scrollPosition + 100 < sectionTop + sectionHeight) {
+            menuItem.classList.add('active'); // Adicione uma classe 'active' para destacar o item
+          } else {
+            menuItem.classList.remove('active'); // Remova a classe 'active' se não estiver visível
+          }
+        }
+      });
+    });
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <div className="bg-gray-50">
+      <header id="inicio" className="relative sm:min-h-screen flex justify-center sm:overflow-hidden">
+        <Navbar />
+        <img src="./images/bg.png" alt="" className="absolute top-0 hidden sm:block sm:max-w-full" />
+        <img src="./images/bg2.png" alt="" className="absolute top-0 sm:hidden block w-full opacity-60" />
+        <div className="w-full sm:max-w-7xl pt-16 sm:pt-28 z-40 flex flex-col items-center">
+          
+          <div className="w-full flex flex-col justify-center items-center flex-wrap gap-2 text-center">
+            <p className={`relative highlited-text fade-in flex items-center before:absolute before:-left-4 before:w-2 before:h-2 before:bg-gray-600/50 before:rounded-full`}>Desenvolvedor Web</p>
+            <h1 className="text-2xl sm:text-5xl text-zinc-900 sm:grad-text font-extrabold tracking-in-expand">RAFAEL BORGES BEZERRA</h1>
+            <p className={`highlited-text fade-in`}>Acompanhe minha jornada no mundo da programação 👇</p>
+          </div>
+
+          <div className="fade-in-2 hidden sm:flex justify-center items-center flex-col sm:flex-row gap-6 mt-24 sm:w-[900px]">
+            <a href="#sobre" className="text-gray-600 border border-blue-300 w-full sm:w-32 text-center py-2 rounded-md hover:bg-blue-600 hover:text-white">Sobre</a>
+            <a href="#projetos" className="text-gray-600 border border-blue-300 w-full sm:w-32 text-center py-2 rounded-md hover:bg-blue-600 hover:text-white -translate-y-5">Projetos</a>
+            <a href="https://wa.me/5573999599911?text=Ol%C3%A1+Rafael%2C+vim+pelo+site" className="text-gray-600 border border-blue-300 w-full sm:w-32 text-center py-2 rounded-md hover:bg-blue-600 hover:text-white">Contato</a>
+          </div>
+
+          <div className="fade-in-2 max-w-5xl mt-24 hidden sm:flex justify-center gap-4 flex-wrap">
+            <Card
+              imagePath="1"
+              type=""
+              description="Sistema de gestão financeira"
             />
-          </a>
+            <Card
+              imagePath="2"
+              type=""
+              className="sm:-translate-y-6"
+              description="Página de vendas"
+            />
+            <Card
+              imagePath="3"
+              type=""
+              description="Sistema de controle de alunos"
+            />
+            <Card
+              imagePath="4"
+              type=""
+              description="Sistema de controle de vendas"
+            />
+            <Card
+              imagePath="5"
+              type=""
+              className="sm:-translate-y-6"
+              description="Sistema para gestão de projetos"
+            />
+            <Card
+              imagePath="6"
+              type=""
+              description="Sistema para gestão de projetos"
+            />
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </header>
+      <main className="fade-in-2 flex flex-col-reverse sm:flex-col ">
+        <Section id="sobre" className="pb-24 pt-12 sm:pt-32">
+          <div className="flex flex-col items-center mb-6 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-semibold">Sobre mim</h2>
+          </div>
+          <div className="relative w-full max-w-2xl flex flex-col gap-4 bg-white shadow-xl px-4 sm:px-8 py-6 border border-zinc-200 rounded-xl">
+            <div className="flex items-center gap-8 border-b py-2">
+              <img src="./images/eu.png" alt="Foto do Rafael Borges Bezerra" className="w-20 h-20 bg-gray-100 rounded-md" />
+              <div className="flex flex-col">
+                <h2 className="text-2xl font-semibold text-blue-700">Rafael Borges Bezerra</h2>
+                <h5 className="text-zinc-600 font-medium">Desenvolvedor web</h5>
+              </div>
+            </div>
+            <div className="flex flex-col gap-3 text-zinc-600">
+              <p>Sou fascinado por programação desde novo por causa possibilidade de poder desenvolver praticamente o que eu quiser.</p>
+              <p>Por isso, iniciei meus estudos ainda jovem e, hoje em dia, estou há mais de 3 anos na área - possuo mais de 20 cursos feitos na Udemy e na Alura.</p>
+              <p>Hoje em dia, posso dizer que domino as principais tecnologias e frameworks web, como Node.js, React, Next, Typescript, Tailwind... Além disso estou iniciado os estudos em dev mobile com o React Native.</p>
+            </div>
+            <div className="absolute top-2 right-2 flex gap-1 items-center">
+              <Link href="https://github.com/leafartech" className="hover:bg-zinc-100 rounded">
+                <img src="./images/midia/1.png" alt="" className="h-8" />
+              </Link>
+              <Link href="https://www.linkedin.com/in/rafael-bezerra-2b7263266/" className="hover:bg-zinc-100 rounded">
+                <img src="./images/midia/2.png" alt="" className="h-8" />
+              </Link>
+              <Link href="https://www.instagram.com/o.rafael.bezerra/" className="hover:bg-zinc-100 rounded">
+                <img src="./images/midia/3.png" alt="" className="h-8" />
+              </Link>
+            </div>
+          </div>
+        </Section>
+        <section id="projetos" className="sm:bg-gray-100 py-12 px-2 sm:px-0">
+          <div className="flex flex-col items-center mb-6 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-semibold">Projetos realizados</h2>
+            <p>Sistemas Web e Páginas de venda</p>
+          </div>
+          <Masonry />
+          <div className="flex justify-center text-zinc-600 mt-6 sm:mt-12">
+            <p className="flex items-center gap-1">
+              <ArrowSmallLeftIcon className="h-4 w-4" />
+              <span>Arraste para o lado as imagens</span>
+              <ArrowSmallRightIcon className="h-4 w-4" />
+            </p>
+          </div>
+        </section>
+        <Section id="contato" className="sm:py-12">
+          <div className="flex flex-col items-center mb-4 sm:mb-12">
+            <h2 className="text-3xl font-semibold hidden sm:block">Entre em contato</h2>
+            <Link href="https://wa.me/5573999599911?text=Ol%C3%A1+Rafael%2C+vim+pelo+site" className="sm:shadow rounded-md sm:p-6 mt-4 text-blue-700">Whatsapp</Link>
+          </div>
+        </Section>
+      </main>
+    </div>
   )
 }
