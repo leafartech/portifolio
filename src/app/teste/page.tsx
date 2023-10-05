@@ -7,7 +7,7 @@ export default function Teste() {
 
     function formSubmit(e: FormEvent) {
         e.preventDefault()
-        router.push('/obrigado')
+        window.location.href = 'https://rafabezerra.com.br/obrigado'
     }   
 
     return (
