@@ -1,16 +1,25 @@
-export default function Teste() {
+import HeroTeste from "@/components/HeroTeste";
+
+export default function Page() {
     return (
-        <main className="flex items-center justify-center h-screen">
-            <form className="flex flex-col gap-3">
-                <div className="flex flex-col gap-1">
-                    <label>Email</label>
-                    <input type="text" />
+        <div className="">
+            <section className="w-full flex justify-center">
+                <div className="w-full max-w-7xl">
+                    <HeroTeste
+                        title="Headline principal da página para apresentar oferta"
+                        imagePath="eu"
+                    >
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </HeroTeste>
+                    <HeroTeste
+                        title="Headline principal da página para apresentar oferta"
+                        imagePath="eu"
+                        reverse={true}
+                    >
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </HeroTeste>
                 </div>
-                <div className="flex flex-col gap-1">
-                    <label>Telefone</label>
-                    <input type="text" />
-                </div>
-            </form>
-        </main>
+            </section>
+        </div>
     )
 }

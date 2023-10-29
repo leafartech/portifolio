@@ -138,12 +138,12 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <Section id="contato" className="sm:py-12">
+        {/* <Section id="contato" className="sm:py-12">
           <div className="flex flex-col items-center mb-4 sm:mb-12">
             <h2 className="text-3xl font-semibold hidden sm:block">Entre em contato</h2>
             <Link href="https://wa.me/5573999599911?text=Ol%C3%A1+Rafael%2C+vim+pelo+site" className="sm:shadow rounded-md sm:p-6 mt-4 text-blue-700">Whatsapp</Link>
           </div>
-        </Section>
+        </Section> */}
       </main>
     </div>
   )
