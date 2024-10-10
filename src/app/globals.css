@@ -71,10 +71,10 @@
 }
 
 .fade-in {
-  animation: fade-in 4s linear;
+  animation: fade-in 2s linear;
 }
 .fade-in-2 {
-  animation: fade-in-2 5s linear;
+  animation: fade-in-2 3s linear;
 }
 @keyframes fade-in {
   0% {

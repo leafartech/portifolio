@@ -18,7 +18,7 @@ export default function Home() {
       // Você pode usar o método getBoundingClientRect() para isso
 
       // Adicione/remova a classe para destacar o item do menu correspondente
-      
+
       menuItems.forEach((menuItem) => {
         if (menuItem !== null && menuItem) {
           const sectionId = menuItem.getAttribute('href')!.substring(1);
@@ -44,7 +44,7 @@ export default function Home() {
         <img src="./images/bg.png" alt="" className="absolute top-0 hidden sm:block sm:max-w-full" />
         <img src="./images/bg2.png" alt="" className="absolute top-0 sm:hidden block w-full opacity-60" />
         <div className="w-full sm:max-w-7xl pt-16 sm:pt-28 z-40 flex flex-col items-center">
-          
+
           <div className="w-full flex flex-col justify-center items-center flex-wrap gap-2 text-center">
             <p className={`relative highlited-text fade-in flex items-center before:absolute before:-left-4 before:w-2 before:h-2 before:bg-gray-600/50 before:rounded-full`}>Desenvolvedor Web</p>
             <h1 className="text-2xl sm:text-5xl text-zinc-900 sm:grad-text font-extrabold tracking-in-expand">RAFAEL BORGES BEZERRA</h1>
@@ -136,6 +136,12 @@ export default function Home() {
               <span>Arraste para o lado as imagens</span>
               <ArrowSmallRightIcon className="h-4 w-4" />
             </p>
+          </div>
+          <div className="flex justify-center mt-6">
+            <a
+              href="https://wa.me/55739999599911"
+              className="bg-blue-500 hover:bg-blue-600 uppercase py-4 text-sm text-white font-semibold w-full sm:max-w-sm rounded-xl text-center"
+            >Entrar em contato</a>
           </div>
         </section>
         {/* <Section id="contato" className="sm:py-12">
